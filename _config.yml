@@ -2,21 +2,21 @@
 ## to customize your blog
 
 title: Stat 386 Blog
-description: "This description of the blog will appear on the 'About' page." 
-author: Your name
-author_description: "This description of who you are will appear on the 'About' page." 
+description: "My thoughts and experiences with various statistical projects" 
+author: Talmage Anderson
+author_description: "Current BYU Applied Statistics & Analytics Major" 
 
-url: https://esnt.github.io ## change this to https://yourusername.github.io
-baseurl: /another-stat386-theme ## change this to the name of your blog repository
+url: https://t-anderson21.github.io ## change this to https://yourusername.github.io
+baseurl: /blog ## change this to the name of your blog repository
 header_image: /assets/img/headerimg.jpg ## change your header image if you want
 
 ## Add your social media user names.  Github is required, the rest are optional
 social:
-    github:  ## required
+    github:  t-anderson21
     twitter: 
     facebook: 
     email: 
-    linkedin: 
+    linkedin: talmage-anderson17
     youtube: 
     tumblr: 
     website: 
