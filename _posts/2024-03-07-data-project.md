@@ -38,6 +38,11 @@ Economic growth reflects the expansion of an economy's production capacity over 
 In summary, GDP, inflation, and economic growth are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
 
 
-[Unemployment Rate Trends](unemployment_rate_trends.png)
 
 /assets/img/unemployment_rate_trends.png
+
+{% raw %}![Unemployment Rate Trends](/assets/img/unemployment_rate_trends.png)
+
+![Unemployment Rate Trends]({{site.url}}{{site.baseurl}}/assets/img/unemployment_rate_trends.png)
+
+
