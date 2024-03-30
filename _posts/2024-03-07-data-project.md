@@ -45,4 +45,7 @@ In summary, GDP, inflation, and economic growth are key indicators in macroecono
 
 ![Unemployment Rate Trends]({{site.url}}{{site.baseurl}}/assets/img/unemployment_rate_trends.png)
 
+[Link to My Main Project](https://github.com/t-anderson21/blog-project/tree/main)
+
+
 
