@@ -36,3 +36,8 @@ Economic Growth:
 Economic growth reflects the expansion of an economy's production capacity over time, resulting in an increase in the level of real output and income. Sustainable economic growth is essential for improving living standards, reducing poverty, and fostering long-term prosperity. Factors such as technological innovation, capital accumulation, labor productivity, and institutional reforms contribute to economic growth. Policymakers use various tools and policies to promote economic growth, including fiscal policies (government spending and taxation) and monetary policies (interest rates and money supply).
 
 In summary, GDP, inflation, and economic growth are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
+
+
+[Unemployment Rate Trends](unemployment_rate_trends.png)
+
+/assets/img/unemployment_rate_trends.png
