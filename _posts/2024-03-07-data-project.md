@@ -45,5 +45,5 @@ the correlation between Civpart and unemployment rate for the last 5 years: -0.7
 
 ![Unemployment Rate Trends]({{site.url}}{{site.baseurl}}/assets/img/unemployment_rate_trends.png)
 
-[Link to My Main Project](https://github.com/t-anderson21/blog-project/tree/main)
+[Link to Project folder](https://github.com/t-anderson21/blog-project/tree/main)
 
