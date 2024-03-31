@@ -7,14 +7,12 @@ image: "/assets/img/image5.jpg"
 display_image: false  # change this to true to display the image below the banner 
 ---
 
+INTRODUCTION
 I'm currently taking a macroeconomics class which studies general trends in the US economy. 
 
 I wanted to look over at the overall economics indicators as it related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class, but everyone remembers 
 
-
 Most FRED data is reported quarterly so I kept that the same across each variable. I also keep each variable as over time same time period, from 1948 to present.
-
-
 
 Macroeconomics is a branch of economics that focuses on the study of the economy as a whole, rather than individual markets. It deals with the aggregate phenomena of economic activity, such as total output, employment, inflation, and economic growth, to understand and analyze how these variables interact and influence each other at the national and global levels.
 
@@ -23,7 +21,11 @@ Key indicators in Macroeconomics such as Gross Domestic Product (GDP), inflation
 
 I also included Real GDP which is GDP inflation adjusted value of the US output.
 
+PROCESS
 
+
+
+ANALYSIS (so far)
 Gross Domestic Product (GDP):
 GDP represents the total monetary value of all goods and services produced within a country's borders over a specific period, typically a year or a quarter. It serves as a comprehensive measure of an economy's output and represents the size and scale of economic activity. GDP can be broken down into different components, including consumption, investment, government spending, and net exports, offering insights into the contributions of various sectors to overall economic output.
 Inflation:
@@ -41,9 +43,15 @@ the correlation between Civpart and unemployment rate for the last 5 years: -0.7
 
 /assets/img/unemployment_rate_trends.png
 
-{% raw %}![Unemployment Rate Trends](assets/img/unemployment_rate_trends.png)
+{% raw %}![Unemployment Rate Trends](assets/img/unemployment.png)
 
-![Unemployment Rate Trends]({{site.url}}{{site.baseurl}}/assets/img/unemployment_rate_trends.png)
+![Unemployment Rate Trends]({{site.url}}{{site.baseurl}}/assets/img/unemployment.png)
+
+
+
+
+To conclude, its important to remember numbers represent real lives and their impact is crucial in understanding the significance of economic indicators and statistics. While numbers themselves may seem abstract, they are deeply intertwined with real-life experiences and have tangible impacts on individuals, communities, and societies. Economic indicators provide insights into the health and performance of an economy. Behind these numbers lie stories of individuals seeking employment, families struggling to make ends meet, businesses striving to thrive, and policymakers making decisions that shape the lives of millions. For instance, a rise in the unemployment rate signifies job losses, financial strain, and uncertainty for individuals and families. It can lead to challenges in meeting basic needs, increased stress levels, and disruptions in communities. As part of the class, I had to watch the most recent annoucement from the Federal Reserve so I'm trying to pay more attention to what's happening with the US economy. It'll be interesting to see shifts as a result of the upcoming election and the likely politiking.
+
+Challenge:
 
 [Link to Project folder](https://github.com/t-anderson21/blog-project/tree/main)
-
