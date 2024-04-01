@@ -50,8 +50,10 @@ nominal_gdp_df = nominal_gdp_df[nominal_gdp_df['Date'].dt.year >= 1948]
 If successful here's what the header of what my data looks like:
 
 ![Nominal GDP Head](assets/img/NominalGDP Header.png)
+
 assets/img/NominalGDP Header.png
 
+![Figure]({{site.url}}/{{site.baseurl}}/assets/img/NominalGDPHeader.png)
 
 #### Analysis (so far)
 
