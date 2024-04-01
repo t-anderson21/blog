@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Macroeconomic Data Trends"
+title:  "A Brief Look at Macroeconomic Trends"
 date: 2024-03-27
-description: A sample exploration of data available on FRED   
+description: A sample exploration of economic indicators available on FRED   
 image: "/assets/img/image5.jpg"
 display_image: false  # change this to true to display the image below the banner 
 ---
@@ -118,6 +118,6 @@ Challenge: ....  Analyze the Trends and Implications of Economic Indicators
 #### Sources
 [Project folder](https://github.com/t-anderson21/blog-project/tree/main)
 
-[Link to FRED database](https://fred.stlouisfed.org/series/CIVPART)
+[Link to FRED data for CIVPART](https://fred.stlouisfed.org/series/CIVPART)
 
-[Link to FRED database](https://fred.stlouisfed.org/series/GDPC1)
+[Link to data for real GDP](https://fred.stlouisfed.org/series/GDPC1)
