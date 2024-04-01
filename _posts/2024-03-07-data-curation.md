@@ -55,10 +55,15 @@ nominal_gdp_df = nominal_gdp_df[nominal_gdp_df['Date'].dt.year >= 1948]
 # Display the DataFrame
 print(nominal_gdp_df)
 ```
+If this was sucessful here's what the header of what my data looked like:
+
+![Nominal GDP Head](assets/img/NominalGDP Header.png)
+assets/img/NominalGDP Header.png
+
 
 ## Analysis (so far)
 
-I created a full dataset with 6 variables, using a merge command on the date variable since all the data I accessed is quarterly.
+I created a full dataset with 6 variables, using a merge command on the date variable since all the data I accessed is quarterly. This allowed me to keep the same range of data, from 1948 to present. I'll probably do more later with focusing on shorter periods of times to see what trends look like around recessions.
 
 ```
 # Merge all DataFrames on the 'Date' column
