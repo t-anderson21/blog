@@ -10,15 +10,14 @@ display_image: false  # change this to true to display the image below the banne
 ### Introduction
 I'm currently taking a macroeconomics class which studies general trends in the US economy and has plenty of overlap to the data science world. Macroeconomics is a branch of economics that focuses on the study of the economy as a whole, rather than individual markets. It deals with the aggregate phenomena of economic activity, such as total output, employment, inflation, and economic growth, to understand and analyze how these variables interact and influence each other at the national and global levels. 
 
-I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. The FRED database or Federal Reserve Economic Data is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis which I used last summer for an internship with the government. It has important data on indicators in macroeconomics such as gross domestic product, inflation, and economic growth that provide valuable insights into the state of an economy. I choose to use FRED as a public resource for economic data, accessed using an API key, to gather data on these economic indicators. The five I selected for now are gross domestic product (GDP) or total value of goods & services in the US, inflation or the natural rise and fall of prices, the civilian labor force participation rate, the unemployment rate, and consumer price index (CPI).  I also included Real GDP which is GDP inflation adjusted value of the US output as a comparison to GDP.
+I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. The FRED database or Federal Reserve Economic Data is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis which I used last summer for an internship with the government. I choose to use FRED as a public resource for economic data, accessed using an API key, to gather data on these economic indicators. The five I selected for now are gross domestic product (GDP), the civilian labor force participation rate, the unemployment rate, and consumer price index (CPI).  I also included real GDP or inflation adjusted GDP.
 
 Here's the link if you'd like to explore similar data: [Link to FRED database](https://fred.stlouisfed.org)
 
 #### Data Access
-
 First step after deciding I wanted to focus on economic data was to get an API key for FRED. You need to sign up for a free account on the FRED website. Once you have registered an account, you can navigate to the FRED API section and request an API key. The API key allows you to access FRED's vast data collection for free, and enabling you to retrieve datasets, perform analysis, and integrate economic indicators into your projects. Simply follow the instructions provided on the FRED website to obtain your unique API key, which you can then use to authenticate your requests to the FRED API. Most FRED data is reported quarterly so I kept that the same across each variable. I then filtered each variable to be from 1948 to present.
 
-Once you've loaded the necessary libraries, copy and paste your API key into a separate .txt file named "api_key.txt". It did take me a few tries and fighting with syntax to get the API key to work correctly.
+Once you've loaded the necessary libraries, copy and paste your API key into a separate .txt file named "api_key.txt". It did take me a few tries and fighting with syntax to get the API key to work correctly. (see data_project.ipynb in my project folder for help)
 ```
 # Only reference API file
 with open('api_key.txt', 'r') as file:
@@ -52,7 +51,6 @@ Here's what the header of what my data looks like:
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/NominalGDPHeader.png)
 
 #### Analysis (so far)
-
 I created a full dataset with 6 variables, using a merge command on the date variable since all the data I accessed is quarterly. This allowed me to keep the same range of data, from 1948 to present. I'll probably do more later with focusing on shorter periods of times to see what trends look like around recessions.
 
 ```
@@ -87,7 +85,7 @@ It is important to remember numbers represent real lives and their impact is cru
 My challenge to the reader: try to access one economic indicator of choice, and analyze one recent trend which you've heard about on the news.
 
 
-##### Sources
+#### Sources
 [Project folder](https://github.com/t-anderson21/blog-project/tree/main)
 
 [Link to FRED data for CIVPART](https://fred.stlouisfed.org/series/CIVPART)
