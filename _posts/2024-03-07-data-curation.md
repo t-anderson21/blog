@@ -78,14 +78,12 @@ The full_df dataset comprises various economic indicators from the FRED database
 
 I found that the correlation between CPI and Unemployment Rate of -0.2951189169112918 which suggests a weak negative correlation between these two variables. There is some level of trade-off between inflation and unemployment in the economy, as suggested by the Phillips curve concept (something I learned about last week!). The correlation between Civpart and Unemployment rate for the last 5 years is -0.7833513902786559 and indicates a strong negative correlation between these two variables. This  implies that changes in labor force participation can have a substantial impact on the unemployment rate and vice versa. For example, an increase in labor force participation may lead to lower unemployment rates as more people enter or re-enter the labor market. Conversely, a decrease in labor force participation may lead to higher unemployment rates as fewer people are actively seeking employment. Thankfully we can see both of these rates are returning to pre-pandemic levels. I think its safe to say we are reaching a 'soft' land and avoiding any true recession effects, but maybe that's a topic for later I can try to prove using this data.
 
-NominalGDP Header.png
-![Figure]({{site.url}}/{{site.baseurl}}/assets/img/unemployment_rate_trends.png)
+#### A Closer Look at the Pandemic
+![Figure]({{site.url}}/{{site.baseurl}}/assets/img/unemployment.png)
 
-/assets/img/unemployment_rate_trends.png
-
-/assets/img/civpart_line.png
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/civpart_line.png)
 
+These two graphs show the immediate effects of the pandemic on unemployment rates. There is a clear drop for Civpart but it wasn't as much as I expected (~3%), and a much sharper increase for the unemployment rate (~10%). This is important to consider when we look at how appropriate the government stimulus and response was. I want to do a closer look at inflation in the near future.
 
 #### Conclusion
 It is important to remember numbers represent real lives and their impact is crucial in understanding the significance of economic indicators and statistics. While numbers themselves may seem abstract, they are deeply intertwined with real-life experiences and have tangible impacts on individuals, communities, and societies. Economic indicators provide insights into the health and performance of an economy. Behind these numbers lie stories of individuals seeking employment, families struggling to make ends meet, businesses striving to thrive, and policymakers making decisions that shape the lives of millions. For instance, a rise in the unemployment rate signifies job losses, financial strain, and uncertainty for individuals and families. As part of the class, I had to watch the most recent annoucement from the Federal Reserve so I'm trying to pay more attention to what's happening to the US economy. It'll be interesting to see shifts as a result of the upcoming election and accompanying politiking.
