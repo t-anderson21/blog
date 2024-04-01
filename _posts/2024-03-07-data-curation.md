@@ -8,29 +8,67 @@ display_image: false  # change this to true to display the image below the banne
 ---
 
 ## Introduction
-I'm currently taking a macroeconomics class which studies general trends in the US economy and has plenty of overlap to the data science world. Macroeconomics is a branch of economics that focuses on the study of the economy as a whole, rather than individual markets. It deals with the aggregate phenomena of economic activity, such as total output, employment, inflation, and economic growth, to understand and analyze how these variables interact and influence each other at the national and global levels. I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. 
+I'm currently taking a macroeconomics class which studies general trends in the US economy and has plenty of overlap to the data science world. Macroeconomics is a branch of economics that focuses on the study of the economy as a whole, rather than individual markets. It deals with the aggregate phenomena of economic activity, such as total output, employment, inflation, and economic growth, to understand and analyze how these variables interact and influence each other at the national and global levels. 
 
-FRED stands for Federal Reserve Economic Data. It is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis.
+I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. The FRED database or Federal Reserve Economic Data is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis which I used last summer for an internship with the government. It has important data on indicators in macroeconomics such as gross domestic product, inflation, and economic growth that provide valuable insights into the state of an economy. I choose to use FRED as a public resource for economic data, accessed using an API key, to gather data on these economic indicators. The five I selected for now are gross domestic product (GDP) or total value of goods & services in the US, inflation or the natural rise and fall of prices, the civilian labor force participation rate, the unemployment rate, and consumer price index (CPI).  I also included Real GDP which is GDP inflation adjusted value of the US output as a comparison to GDP.
 
+Here's the link if you'd like to explore the available data: [Link to FRED database](https://fred.stlouisfed.org)
 
+## Data Access
 
-
-Key indicators in Macroeconomics such as Gross Domestic Product (GDP), inflation, and economic growth stand out as fundamental measures that provide valuable insights into the state of an economy. I used Federal Reserve Economic Data or (FRED) as a public resource for economic data, accessed using an API key, to gather data on economic indicators. The five I selected for now are gross domestic product (GDP) or total value of goods & services in the US, inflation or the natural rise and fall of prices, the civilian labor force participation rate, and ___  
-
-I also included Real GDP which is GDP inflation adjusted value of the US output.
-
-## PROCESS
-
-First step after deciding I wanted to focus on economic data was to get an API key.
+First step after deciding I wanted to focus on economic data was to get an API key for FRED. To obtain an API key from the Federal Reserve Economic Data (FRED), you need to sign up for an account on the FRED website. Once you have registered an account, you can navigate to the FRED API section and request an API key. The API key allows you to access FRED's vast collection of economic data programmatically, enabling you to retrieve datasets, perform analysis, and integrate economic indicators into your applications or projects. Simply follow the instructions provided on the FRED website to obtain your unique API key, which you can then use to authenticate your requests to the FRED API.
 
 Most FRED data is reported quarterly so I kept that the same across each variable. I also keep each variable as over time same time period, from 1948 to present.
 
-To obtain an API key from the Federal Reserve Economic Data (FRED), you need to sign up for an account on the FRED website. Once you have registered an account, you can navigate to the FRED API section and request an API key. The API key allows you to access FRED's vast collection of economic data programmatically, enabling you to retrieve datasets, perform analysis, and integrate economic indicators into your applications or projects. Simply follow the instructions provided on the FRED website to obtain your unique API key, which you can then use to authenticate your requests to the FRED API.
+```
+pip install numpy
+```
+Once you've loaded the necessary libraries, copy and paste your API key into a separate .txt file named "api_key.txt". It did take me a few tries and fighting with syntax to get the API key to work correctly.
+```
+# Only reference API file
+with open('api_key.txt', 'r') as file:
+    api_key = file.read().strip()
 
-## ANALYSIS (so far)
+# Initialize the Fred object with your API key
+fred = Fred(api_key=api_key)
 
-Created a full dataset with 6 variables
+# Example: Get data for Real GDP, not GDP
+gdp_data = fred.get_series('GDPC1')
+gdp_df = pd.DataFrame({'Date': gdp_data.index, 'GDP': gdp_data.values})
 
+# Filter real GDP data to include only data from 1948 to present
+realgdp_df = gdp_df[gdp_df['Date'].dt.year >= 1948]
+```
+
+Specify which type of data you'd like to access. I started by downloading the entire GPD dataset (this one is not adjusted for inflation):
+
+```
+# Example: Get data for nominal GDP
+nominal_gdp_data = fred.get_series('GDP')
+
+# Convert nominal GDP data to DataFrame
+nominal_gdp_df = pd.DataFrame({'Date': nominal_gdp_data.index, 'Nominal GDP': nominal_gdp_data.values})
+
+# Filter nominal GDP data to include only data from 1948 to present
+nominal_gdp_df = nominal_gdp_df[nominal_gdp_df['Date'].dt.year >= 1948]
+
+# Display the DataFrame
+print(nominal_gdp_df)
+```
+
+## Analysis (so far)
+
+I created a full dataset with 6 variables, using a merge command on the date variable since all the data I accessed is quarterly.
+
+```
+# Merge all DataFrames on the 'Date' column
+full_df = cpi_df.merge(nominal_gdp_df, on='Date').merge(realgdp_df, on='Date').merge(unemployment_df, on='Date').merge(civpart_df, on='Date')
+
+# Save full_df as CSV
+full_df.to_csv('full_data.csv', index=False)
+```
+
+Here is a brief description of the various indicators I included:
 
 | Variables    | Description / Data type                                  |
 | ------------ | ---------------------------------------------------------|
@@ -75,4 +113,6 @@ Challenge: ....  Analyze the Trends and Implications of Economic Indicators
 #### Sources
 [Project folder](https://github.com/t-anderson21/blog-project/tree/main)
 
-[Link to FRED database](https://fred.stlouisfed.org)
+[Link to FRED database](https://fred.stlouisfed.org/series/CIVPART)
+
+[Link to FRED database](https://fred.stlouisfed.org/series/GDPC1)
