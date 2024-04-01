@@ -2,12 +2,12 @@
 layout: post
 title:  "A Brief Look at Macroeconomic Trends"
 date: 2024-03-27
-description: A sample exploration of economic indicators available on FRED   
+description: A sample exploration of FRED economic indicators and the impact of the COVID-19 pandemic  
 image: "/assets/img/image5.jpg"
 display_image: false  # change this to true to display the image below the banner 
 ---
 
-#### Introduction
+### Introduction
 I'm currently taking a macroeconomics class which studies general trends in the US economy and has plenty of overlap to the data science world. Macroeconomics is a branch of economics that focuses on the study of the economy as a whole, rather than individual markets. It deals with the aggregate phenomena of economic activity, such as total output, employment, inflation, and economic growth, to understand and analyze how these variables interact and influence each other at the national and global levels. 
 
 I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. The FRED database or Federal Reserve Economic Data is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis which I used last summer for an internship with the government. It has important data on indicators in macroeconomics such as gross domestic product, inflation, and economic growth that provide valuable insights into the state of an economy. I choose to use FRED as a public resource for economic data, accessed using an API key, to gather data on these economic indicators. The five I selected for now are gross domestic product (GDP) or total value of goods & services in the US, inflation or the natural rise and fall of prices, the civilian labor force participation rate, the unemployment rate, and consumer price index (CPI).  I also included Real GDP which is GDP inflation adjusted value of the US output as a comparison to GDP.
@@ -77,19 +77,17 @@ I found that the correlation between CPI and Unemployment Rate of -0.29511891691
 
 #### A Closer Look at the Pandemic
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/unemployment.png)
-
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/civpart_line.png)
 
-These two graphs show the immediate effects of the pandemic on unemployment rates. There is a clear drop for Civpart but it wasn't as much as I expected (~3%), and a much sharper increase for the unemployment rate (~10%). This is important to consider when we look at how appropriate the government stimulus and response was. I want to do a closer look at inflation in the near future.
+The two graphs depict the immediate impact of the pandemic on unemployment rates. While there was a noticeable decline in the Civilian Labor Force Participation Rate (Civpart), it wasn't as significant as anticipated, amounting to approximately 3%. Conversely, there was a stark and rapid increase in the unemployment rate, reaching around 10%. Reflecting on the government's response, it's clear that these economic indicators underscore the challenges faced during times of crisis. I'd like a closer look at role of inflation in the near future.
 
-#### Conclusion
-It is important to remember numbers represent real lives and their impact is crucial in understanding the significance of economic indicators and statistics. While numbers themselves may seem abstract, they are deeply intertwined with real-life experiences and have tangible impacts on individuals, communities, and societies. Economic indicators provide insights into the health and performance of an economy. Behind these numbers lie stories of individuals seeking employment, families struggling to make ends meet, businesses striving to thrive, and policymakers making decisions that shape the lives of millions. For instance, a rise in the unemployment rate signifies job losses, financial strain, and uncertainty for individuals and families. As part of the class, I had to watch the most recent annoucement from the Federal Reserve so I'm trying to pay more attention to what's happening to the US economy. It'll be interesting to see shifts as a result of the upcoming election and accompanying politiking.
+### Conclusion
+It is important to remember numbers represent real lives and their impact is crucial in understanding the significance of economic indicators and statistics. Economic indicators provide insights into the health and performance of an economy. Behind these numbers lie stories of individuals seeking employment, families struggling to make ends meet, businesses striving to thrive, and policymakers making decisions that shape the lives of millions. For instance, a rise in the unemployment rate signifies job losses, financial strain, and uncertainty for individuals and families. As part of the class, I had to watch the most recent annoucement from the Federal Reserve so I'm trying to pay more attention to what's happening to the US economy. It'll be interesting to see shifts as a result of the upcoming election and accompanying politiking.
 
 My challenge to the reader: try to access one economic indicator of choice, and analyze one recent trend which you've heard about on the news.
 
-Thanks for reading!
 
-#### Sources
+##### Sources
 [Project folder](https://github.com/t-anderson21/blog-project/tree/main)
 
 [Link to FRED data for CIVPART](https://fred.stlouisfed.org/series/CIVPART)
