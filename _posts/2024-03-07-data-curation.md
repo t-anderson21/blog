@@ -55,7 +55,7 @@ nominal_gdp_df = nominal_gdp_df[nominal_gdp_df['Date'].dt.year >= 1948]
 # Display the DataFrame
 print(nominal_gdp_df)
 ```
-If this was sucessful here's what the header of what my data looked like:
+If successful here's what the header of what my data looks like:
 
 ![Nominal GDP Head](assets/img/NominalGDP Header.png)
 assets/img/NominalGDP Header.png
@@ -84,23 +84,9 @@ Here is a brief description of the various indicators I included:
 | Unemployment | (float) the percentage of the labor force that is unemployed and actively seeking employment |
 | CIVPART      | (float) the percentage of the civilian labor force either employed or actively seeking employment |
 
+The full_df dataset comprises various economic indicators from the FRED database. It includes data for the Consumer Price Index (CPI), nominal Gross Domestic Product (GDP), real GDP, the unemployment rate, and the civilian labor force participation rate. Each row represents a specific date, and the columns provide the corresponding values for these indicators. This dataset spans from 1948 to the present, providing a rich resource for analyzing and understanding trends in inflation, economic growth, labor market dynamics, and workforce participation over time. GDP, inflation, unemployment rate, etc. are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
 
-Gross Domestic Product (GDP):
-GDP represents the total monetary value of all goods and services produced within a country's borders over a specific period, typically a year or a quarter. It serves as a comprehensive measure of an economy's output and represents the size and scale of economic activity. GDP can be broken down into different components, including consumption, investment, government spending, and net exports, offering insights into the contributions of various sectors to overall economic output.
-Inflation:
-Inflation refers to the rate at which the general level of prices for goods and services rises over time, resulting in a decrease in the purchasing power of money. Moderate inflation is generally considered healthy for an economy, as it encourages consumption and investment while discouraging hoarding of cash. However, high or unpredictable inflation can erode consumer purchasing power, disrupt economic planning, and lead to inefficiencies in resource allocation. Central banks closely monitor inflation and often target a specific inflation rate as part of their monetary policy objectives.
-Economic Growth:
-Economic growth reflects the expansion of an economy's production capacity over time, resulting in an increase in the level of real output and income. Sustainable economic growth is essential for improving living standards, reducing poverty, and fostering long-term prosperity. Factors such as technological innovation, capital accumulation, labor productivity, and institutional reforms contribute to economic growth. Policymakers use various tools and policies to promote economic growth, including fiscal policies (government spending and taxation) and monetary policies (interest rates and money supply).
-In summary, GDP, inflation, and economic growth are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
-
-The full_df dataset comprises various economic indicators from the FRED database. It includes data for the Consumer Price Index (CPI), nominal Gross Domestic Product (GDP), real GDP, the unemployment rate, and the civilian labor force participation rate. Each row represents a specific date, and the columns provide the corresponding values for these indicators. This dataset spans from 1948 to the present, providing a rich resource for analyzing and understanding trends in inflation, economic growth, labor market dynamics, and workforce participation over time.
-
-
-The correlation between CPI and Unemployment Rate: -0.2951189169112918
-
-The correlation between Civpart and Unemployment rate for the last 5 years: -0.7833513902786559
-
-Thankfully we can see both of these rates are returning to pre-pandemic levels. I think its safe to say we are reaching a 'soft' land and avoiding any true recession effects, but maybe that's a topic for later I can try to prove using this data.
+I found that the correlation between CPI and Unemployment Rate of -0.2951189169112918 which suggests a weak negative correlation between these two variables. There is some level of trade-off between inflation and unemployment in the economy, as suggested by the Phillips curve concept (something I learned about last week!). The correlation between Civpart and Unemployment rate for the last 5 years is -0.7833513902786559 and indicates a strong negative correlation between these two variables. This  implies that changes in labor force participation can have a substantial impact on the unemployment rate and vice versa. For example, an increase in labor force participation may lead to lower unemployment rates as more people enter or re-enter the labor market. Conversely, a decrease in labor force participation may lead to higher unemployment rates as fewer people are actively seeking employment. Thankfully we can see both of these rates are returning to pre-pandemic levels. I think its safe to say we are reaching a 'soft' land and avoiding any true recession effects, but maybe that's a topic for later I can try to prove using this data.
 
 /assets/img/image5.jpg
 
