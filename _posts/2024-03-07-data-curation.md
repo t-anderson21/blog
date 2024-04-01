@@ -12,11 +12,11 @@ I'm currently taking a macroeconomics class which studies general trends in the 
 
 I wanted a closer look at the overall economics indicators I keep hearing about in class as they related to the Covid-19 pandemic and the resulting lockdowns. We've talked a little about the causes and results during class of inflation at high level. Several of these words have become buzz words that we see on the news or recognize at the grocery store as prices climb. The FRED database or Federal Reserve Economic Data is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis which I used last summer for an internship with the government. It has important data on indicators in macroeconomics such as gross domestic product, inflation, and economic growth that provide valuable insights into the state of an economy. I choose to use FRED as a public resource for economic data, accessed using an API key, to gather data on these economic indicators. The five I selected for now are gross domestic product (GDP) or total value of goods & services in the US, inflation or the natural rise and fall of prices, the civilian labor force participation rate, the unemployment rate, and consumer price index (CPI).  I also included Real GDP which is GDP inflation adjusted value of the US output as a comparison to GDP.
 
-Here's the link if you'd like to explore the available data: [Link to FRED database](https://fred.stlouisfed.org)
+Here's the link if you'd like to explore similar data: [Link to FRED database](https://fred.stlouisfed.org)
 
 #### Data Access
 
-First step after deciding I wanted to focus on economic data was to get an API key for FRED. To obtain an API key from the Federal Reserve Economic Data (FRED), you need to sign up for an account on the FRED website. Once you have registered an account, you can navigate to the FRED API section and request an API key. The API key allows you to access FRED's vast collection of economic data programmatically, enabling you to retrieve datasets, perform analysis, and integrate economic indicators into your applications or projects. Simply follow the instructions provided on the FRED website to obtain your unique API key, which you can then use to authenticate your requests to the FRED API. Most FRED data is reported quarterly so I kept that the same across each variable. I also keep each variable as over time same time period, from 1948 to present.
+First step after deciding I wanted to focus on economic data was to get an API key for FRED. You need to sign up for a free account on the FRED website. Once you have registered an account, you can navigate to the FRED API section and request an API key. The API key allows you to access FRED's vast data collection for free, and enabling you to retrieve datasets, perform analysis, and integrate economic indicators into your projects. Simply follow the instructions provided on the FRED website to obtain your unique API key, which you can then use to authenticate your requests to the FRED API. Most FRED data is reported quarterly so I kept that the same across each variable. I then filtered each variable to be from 1948 to present.
 
 Once you've loaded the necessary libraries, copy and paste your API key into a separate .txt file named "api_key.txt". It did take me a few tries and fighting with syntax to get the API key to work correctly.
 ```
@@ -35,10 +35,10 @@ gdp_df = pd.DataFrame({'Date': gdp_data.index, 'GDP': gdp_data.values})
 realgdp_df = gdp_df[gdp_df['Date'].dt.year >= 1948]
 ```
 
-Specify which type of data you'd like to access. I started by downloading the entire GPD dataset (this one is not adjusted for inflation):
+Specify which type of data you'd like to access. I started by downloading the nominal GPD dataset (this one is not adjusted for inflation):
 
 ```
-# Example: Get data for nominal GDP
+# Example: Get data for GDP
 nominal_gdp_data = fred.get_series('GDP')
 
 # Convert nominal GDP data to DataFrame
@@ -47,7 +47,7 @@ nominal_gdp_df = pd.DataFrame({'Date': nominal_gdp_data.index, 'Nominal GDP': no
 # Filter nominal GDP data to include only data from 1948 to present
 nominal_gdp_df = nominal_gdp_df[nominal_gdp_df['Date'].dt.year >= 1948]
 ```
-If successful here's what the header of what my data looks like:
+Here's what the header of what my data looks like:
 
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/NominalGDPHeader.png)
 
@@ -58,9 +58,6 @@ I created a full dataset with 6 variables, using a merge command on the date var
 ```
 # Merge all DataFrames on the 'Date' column
 full_df = cpi_df.merge(nominal_gdp_df, on='Date').merge(realgdp_df, on='Date').merge(unemployment_df, on='Date').merge(civpart_df, on='Date')
-
-# Save full_df as CSV
-full_df.to_csv('full_data.csv', index=False)
 ```
 
 Here is a brief description of the various indicators I included:
@@ -74,9 +71,9 @@ Here is a brief description of the various indicators I included:
 | Unemployment | (float) the percentage of the labor force that is unemployed and actively seeking employment |
 | CIVPART      | (float) the percentage of the civilian labor force either employed or actively seeking employment |
 
-The full_df dataset comprises various economic indicators from the FRED database. It includes data for the Consumer Price Index (CPI), nominal Gross Domestic Product (GDP), real GDP, the unemployment rate, and the civilian labor force participation rate. Each row represents a specific date, and the columns provide the corresponding values for these indicators. This dataset spans from 1948 to the present, providing a rich resource for analyzing and understanding trends in inflation, economic growth, labor market dynamics, and workforce participation over time. GDP, inflation, unemployment rate, etc. are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
+The full_df dataset comprises various economic indicators from the FRED database. It includes data for the Consumer Price Index (CPI), nominal Gross Domestic Product (GDP), real GDP, the unemployment rate, and the civilian labor force participation rate. Each row represents a specific date, and the columns provide the corresponding values for these indicators. GDP, inflation, unemployment rate, etc. are key indicators in macroeconomics that provide valuable insights into the performance and dynamics of economies. By analyzing these indicators, economists and policymakers can assess economic conditions, identify potential challenges, and formulate appropriate policies to promote stability, prosperity, and sustainable growth.
 
-I found that the correlation between CPI and Unemployment Rate of -0.2951189169112918 which suggests a weak negative correlation between these two variables. There is some level of trade-off between inflation and unemployment in the economy, as suggested by the Phillips curve concept (something I learned about last week!). The correlation between Civpart and Unemployment rate for the last 5 years is -0.7833513902786559 and indicates a strong negative correlation between these two variables. This  implies that changes in labor force participation can have a substantial impact on the unemployment rate and vice versa. For example, an increase in labor force participation may lead to lower unemployment rates as more people enter or re-enter the labor market. Conversely, a decrease in labor force participation may lead to higher unemployment rates as fewer people are actively seeking employment. Thankfully we can see both of these rates are returning to pre-pandemic levels. I think its safe to say we are reaching a 'soft' land and avoiding any true recession effects, but maybe that's a topic for later I can try to prove using this data.
+I found that the correlation between CPI and Unemployment Rate of -0.2951189169112918 which suggests a weak negative correlation between these two variables. There is some level of trade-off between inflation and unemployment in the economy, as suggested by the Phillips curve concept (something I learned about last week!). The correlation between Civpart and Unemployment rate for the last 5 years is -0.7833513902786559 and indicates a strong negative correlation between these two variables. This  implies that changes in labor force participation can have a substantial impact on the unemployment rate and vice versa. For example, an increase in labor force participation may lead to lower unemployment rates as more people enter or re-enter the labor market. Thankfully we can see both of these rates are returning to pre-pandemic levels.
 
 #### A Closer Look at the Pandemic
 ![Figure]({{site.url}}/{{site.baseurl}}/assets/img/unemployment.png)
