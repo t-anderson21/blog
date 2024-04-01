@@ -2,7 +2,7 @@
 layout: post
 title:  "A Brief Look at Macroeconomic Trends"
 date: 2024-03-27
-description: A sample exploration of FRED economic indicators and the impact of the COVID-19 pandemic  
+description: A sample of FRED economic indicators and the impact of the COVID-19 pandemic  
 image: "/assets/img/image5.jpg"
 display_image: false  # change this to true to display the image below the banner 
 ---
