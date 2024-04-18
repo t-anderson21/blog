@@ -84,6 +84,7 @@ It is important to remember numbers represent real lives and their impact is cru
 
 My challenge to the reader: try to access one economic indicator of choice, and analyze one recent trend which you've heard about on the news.
 
+Here is a link to the app I created using StreamLit: [Economic Indicators App](https://economic-indicators-stat386.streamlit.app/Correlations)
 
 #### Sources
 [Project folder](https://github.com/t-anderson21/blog-project/tree/main)
